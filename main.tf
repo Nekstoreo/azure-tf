@@ -7,7 +7,8 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "my1ResourceGroup"
+  #Puede cambiar el nombre del grupo de recursos
+  name     = "myResourceGroup"
   location = var.location
 }
 # Virtual Machine Resources
@@ -38,7 +39,7 @@ resource "azurerm_network_interface" "rg" {
   }
 }
 resource "azurerm_windows_virtual_machine" "rg" {
-  name                = "myTF-vm"
+  name                = "myTerraF-vm"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   size                = "Standard_DS1_v2"
