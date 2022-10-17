@@ -73,13 +73,20 @@ resource "azurerm_windows_virtual_machine" "rg" {
     storage_account_type = "Standard_LRS"
   }
 
-  source_image_reference {
+  /*   source_image_reference {
     publisher = "MicrosoftWindowsServer"
     offer     = "WindowsServer"
     sku       = "2019-datacenter-gensecond"
     version   = "latest"
+  } */
+
+  source_image_reference {
+    publisher = "MicrosoftWindowsDesktop"
+    offer     = "Windows-10"
+    sku       = "20h2-pro-g2"
+    version   = "latest"
   }
 
-  patch_mode = "AutomaticByPlatform"
+  #  patch_mode = "AutomaticByPlatform"
 }
 
